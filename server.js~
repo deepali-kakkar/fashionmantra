@@ -1,0 +1,12 @@
+var httpServer = require('http');
+var port = 3100;
+httpServer.createServer(function(req,res){
+	console.log('I am listening')
+	res.writeHead(200,{
+		'Content-Type': 'text/plain'
+	});
+	res.end("welcome to js");
+
+}).listen(port);
+
+console.log('our web server running at http://localhost:'+port)	

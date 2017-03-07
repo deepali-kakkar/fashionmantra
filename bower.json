@@ -1,0 +1,22 @@
+{
+  "name": "fashionMantra",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Deepali Kakkar <deepali.kakkar@ogilvy.com>"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

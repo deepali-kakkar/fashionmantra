@@ -1,0 +1,46 @@
+<div ng-controller="homeCtrl">
+
+    <div class="row">
+        <div class="col-xs-3">
+            <input type="text" class="form-control" placeholder="Search By Category" ng-model="categorySearch">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" placeholder="Search By price" ng-model="priceSearch">
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary">Filter</button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row">
+
+        <div class="col-sm-6 col-md-3" ng-repeat="item in products
+           |filter:{category:categorySearch}
+           |princeRange:{price:priceSearch}">
+            <div class="thumbnail">
+                <img src="{{item.thumbnailImage}}" alt="Generic placeholder thumbnail">
+            </div>
+
+            <div class="caption">
+                <h3 ng-bind="item.model">{{item.name}}</h3>                
+                <p ng-bind="item.price|currency:'Rs.'"></p>
+                <p>
+                    <button class="btn btn-primary" ng-click="showDescription(item)">
+                        View Description
+                    </button>
+                    <!--<a href="#" class="btn btn-default" role="button">
+               Button
+            </a>-->
+                </p>
+                <div class="panel panel-default" ng-show="item.showFullDesc">
+                    <div class="panel-body">
+                        {{item.shortDescription}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
